@@ -2,26 +2,38 @@
 import './App.css';
 import React, { useState } from 'react';
 import Todo from './components/Todo';
+import NavBar from './components/NavBar';
 
 import {
   BrowserRouter as Router,
-  Routes,
-  Route
+  Route,
+  Switch
 } from 'react-router-dom';
-import MenuBar from "./components/nav/MenuBar";
+import Home from './components/Home';
+import About from './components/About';
 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-          <Router>
-            <MenuBar>
-              <Routes>
-                <Route path={'/components/Todo'} element={Todo} />
-              </Routes>
-            </MenuBar>  
-          </Router>
+        <Router>
+          <NavBar />
+
+
+
+          <Switch>
+            <Route path="/home" component={Home} exact>
+              <Home/>
+            </Route>
+            <Route path="/about" component={About} exact>
+              <About/>
+            </Route>
+            <Route path="/todo" component={Todo} exact>
+              <Todo/>
+            </Route>
+          </Switch>
+        </Router>
       </header>
     </div>
   );
