@@ -9,7 +9,7 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
-import Home from './components/Home';
+import Calculator from './components/Calculator';
 import About from './components/About';
 
 
@@ -23,8 +23,8 @@ function App() {
 
 
           <Switch>
-            <Route path="/home" component={Home} exact>
-              <Home/>
+            <Route path="/calculator" component={Calculator} exact>
+              <Calculator/>
             </Route>
             <Route path="/about" component={About} exact>
               <About/>

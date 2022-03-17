@@ -18,22 +18,19 @@ const NavBar = () => {
     }
 
     useEffect(() => {
-
         const changeWidth = () => {
             seTScreen(window.innerWidth);
         }
-    
         window.addEventListener('resize', changeWidth)
-    
       }, [])
     
     
   return (
     <nav className='navbar'>
-        {(Menu || Screen > 500 ) && (
+        {(Menu || Screen > 500 ) && ( /// while screen is bigger than 500, navbar changes
             <ul className= "list">
-                <Link to="/home" className='items'>
-                    <li>Home</li>
+                <Link to="/calculator" className='items'>
+                    <li>Calculator</li>
                 </Link>
                 <Link to="/about" className='items'>
                     <li>About</li>

@@ -17,20 +17,7 @@ function Task({ task, index, completeTask, removeTask }) {
 
 function Todo() {
     const [tasksRemaining, setTasksRemaining] = useState(0);
-    const [tasks, setTasks] = useState([  /// few task examples (hardcoded)
-            {
-                title: "Grab some Pizza",
-                completed: true
-            },
-            {
-                title: "Do your workout",
-                completed: false
-            },
-            {
-                title: "Hangout with friends",
-                completed: false
-            }
-        ]);
+    const [tasks, setTasks] = useState([]) /// few task examples (hardcoded);
 
         useEffect(() => { 
             setTasksRemaining(tasks.filter(task => !task.completed).length) 
